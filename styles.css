@@ -2,10 +2,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
  }
 
- body{
-    font-family: 'Roboto', sans-serif;
+ .main{
     height: 100vh;
     display: flex;
  }
@@ -40,3 +40,23 @@
     background: rgba(0,0,0,0.1);
     cursor: pointer;
  }
+
+ .success-message {
+   display: none;
+   position: absolute;
+   left: 500px;
+   top: 30px;
+   border: none;
+  outline: none;
+  background: linear-gradient(0deg, #0000,35%, #ffff);
+  padding: 1.5rem 2rem;
+  border-radius: 25px;
+  color: black;
+  font-size: 1rem;
+  box-shadow: 1px 10px 2rem rgba(1, 1, 1, 0.5);
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+   
+   
+ }
+ 

@@ -1,5 +1,6 @@
 const cols=document.querySelectorAll('.col')
 
+
 //Изменение цветов при нажатии на "пробел"
 document.addEventListener('keydown',(event) =>{
     event.preventDefault()
@@ -11,7 +12,7 @@ document.addEventListener('keydown',(event) =>{
 //Блокировка изменения цвета
 document.addEventListener('click', (event)=>{
     const type = event.target.dataset.type
-
+ 
     if(type ==='lock'){
         const node=
         event.target.tagName.toLowerCase() === 'i'
@@ -31,6 +32,28 @@ function copyToClickboard(text){
    return navigator.clipboard.writeText(text)
 }
 
+//Добавление блока с сообщением при нажатии на код цвета
+document.addEventListener('click',(event)=>{
+    const type = event.target.dataset.type
+
+    if(type==='copy'){
+
+   const successMessage=document.createElement('div')
+   successMessage.className='success-message'
+
+   const successMessageText=document.createElement('h2')
+   successMessageText.textContent='Текст успешно скопирован'
+
+   successMessage.append(successMessageText)
+   successMessage.style.display='block'
+    
+   document.body.appendChild(successMessage)
+    
+    setTimeout(function(){
+        successMessage.style.display='none'
+    },1000) 
+    }
+})
 //Получение рандомных цветов
 function setRandomColors(isInitial){
     const colors=isInitial ? getColorsFromHash() : []
