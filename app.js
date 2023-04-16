@@ -35,14 +35,13 @@ function copyToClickboard(text){
 //Добавление блока с сообщением при нажатии на код цвета
 document.addEventListener('click',(event)=>{
     const type = event.target.dataset.type
-
     if(type==='copy'){
 
    const successMessage=document.createElement('div')
    successMessage.className='success-message'
 
    const successMessageText=document.createElement('h2')
-   successMessageText.textContent='Текст успешно скопирован'
+   successMessageText.textContent='Цвет успешно скопирован'
 
    successMessage.append(successMessageText)
    successMessage.style.display='block'
